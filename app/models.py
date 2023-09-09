@@ -1,4 +1,7 @@
 # models.py
+from app import db
+
+# Define your models here
 
 from datetime import datetime
 from app import db, login_manager
