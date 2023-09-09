@@ -1,7 +1,7 @@
 # models.py
 
 from datetime import datetime
-from your_flask_app import db, login_manager
+from SAFEGUARDHER import db, login_manager
 from flask_login import UserMixin
 
 @login_manager.user_loader
