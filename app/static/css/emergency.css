@@ -1,0 +1,60 @@
+/* Add this CSS to your existing CSS file or create a new one */
+body {
+    background-color: #202020;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.emergency-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.emergency-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.emergency-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ff5500;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #ff3300;
+}
+
+.instructions-section {
+    margin: 20px;
+}
+
+.instructions-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.instructions-section ul {
+    list-style-type: square;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* Style for alerts */
+.alert {
+    background-color: #ff3300;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+}
