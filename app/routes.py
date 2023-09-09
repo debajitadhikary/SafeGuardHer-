@@ -1,9 +1,9 @@
 # routes.py
 
 from flask import render_template, url_for, flash, redirect, request
-from your_flask_app import app, db, bcrypt
-from your_flask_app.forms import RegistrationForm, LoginForm
-from your_flask_app.models import User
+from app import app, db, bcrypt
+from app.forms import RegistrationForm, LoginForm
+from app.models import User
 
 # Home Page
 @app.route("/")
