@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeguardHer - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/emergency">Send Emergency Signal</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+        <h1>Welcome to SafeguardHer</h1>
+        <p>Your safety matters to us</p>
+    </header>
+    <main>
+        <section class="cta-section">
+            <h2>Get Help When You Need It</h2>
+            <p>If you are in distress or need immediate assistance, click the button below to send an emergency signal to nearby volunteers or responders.</p>
+            <a href="/emergency" class="cta-button">Send Emergency Signal</a>
+        </section>
+        <section class="about-section">
+            <h2>About Us</h2>
+            <p>SafeguardHer is a platform dedicated to ensuring the safety and well-being of women. We connect distressed individuals with trained responders who can provide immediate help.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} SafeguardHer</p>
+    </footer>
+</body>
+</html>
