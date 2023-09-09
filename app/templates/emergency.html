@@ -18,4 +18,38 @@
         <li>If necessary, call the local emergency services number.</li>
     </ul>
 </section>
+
+<script>
+    document.getElementById("emergency-button").addEventListener("click", function () {
+        // Check if the browser supports geolocation
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // Get the user's latitude and longitude
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Send the latitude and longitude to the server using AJAX
+                fetch("/send_emergency_signal", {
+                    method: "POST",
+                    body: JSON.stringify({ latitude: latitude, longitude: longitude }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then(function (response) {
+                        if (response.ok) {
+                            alert("Emergency signal sent. Help is on the way.");
+                        } else {
+                            alert("Failed to send the emergency signal.");
+                        }
+                    })
+                    .catch(function (error) {
+                        console.error("Error:", error);
+                    });
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    });
+</script>
 {% endblock %}

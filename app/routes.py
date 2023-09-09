@@ -2,6 +2,7 @@ from flask import render_template, url_for, flash, redirect, request
 from app import app, db, bcrypt  # Uncomment these lines
 from app.forms import RegistrationForm, LoginForm
 from app.models import User
+from flask import jsonify
 
 # Home Page
 @app.route("/")
@@ -43,3 +44,19 @@ def emergency():
         flash('Emergency signal sent. Help is on the way.', 'success')
         return redirect(url_for('emergency'))
     return render_template('emergency.html', title='Emergency Signal')
+
+
+
+# ...
+
+# New route to handle emergency signal
+@app.route("/send_emergency_signal", methods=['POST'])
+def send_emergency_signal():
+    data = request.get_json()
+    latitude = data.get('latitude')
+    longitude = data.get('longitude')
+
+    # Add code to send the emergency signal with the received latitude and longitude
+    # You can use a third-party service or any other method to send the SOS
+
+    return jsonify(message="Emergency signal received and being processed")
