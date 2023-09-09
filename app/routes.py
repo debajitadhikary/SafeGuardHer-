@@ -1,7 +1,5 @@
-# routes.py
-
 from flask import render_template, url_for, flash, redirect, request
-from app import app, db, bcrypt
+from app import app, db, bcrypt  # Uncomment these lines
 from app.forms import RegistrationForm, LoginForm
 from app.models import User
 
