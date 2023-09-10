@@ -1,4 +1,4 @@
-## SafeGuardHer 
+<h1 align='center'> SafeGuardHer </h1>
  *An Emergency Response Network*
 # <u> `Problem Statement ` :mag: </u>
 In a world where safety and security are paramount concerns, our mission is to harness the power of technology to ensure the safety and well-being of women, providing them with a reliable and accessible lifeline in times of distress.
@@ -11,7 +11,7 @@ By combining technology, empowerment, and community support, the Women Safety SO
 
 <br>
 
- # <u> 'Features' :star2: </u>
+# <u> `Features` :star2: </u>
 Emergency SOS: Instantly send distress signals to predefined contacts, authorities, or friends in case of an emergency.
 Location Sharing: Optionally share your real-time location with trusted contacts during an SOS event.
 Customizable Contacts: Easily configure and update the list of emergency contacts.
