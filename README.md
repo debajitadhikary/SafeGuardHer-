@@ -1,6 +1,6 @@
 <h1 align='center'> SafeGuardHer </h1>
 
-<h3 align = 'right'> An Emergency Response Network' </h3>
+<h3 align = 'right'> ~ An Emergency Response Network </h3>
  
 # <u> `Problem Statement ` :mag: </u>
 In a world where safety and security are paramount concerns, our mission is to harness the power of technology to ensure the safety and well-being of women, providing them with a reliable and accessible lifeline in times of distress.
