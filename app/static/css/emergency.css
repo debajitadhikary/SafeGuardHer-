@@ -1,4 +1,4 @@
-
+/*
 body {
     background-color: #202020;
     color: #ffffff;
@@ -48,7 +48,7 @@ body {
     padding-left: 20px;
 }
 
-/* Style for alerts */
+
 .alert {
     background-color: #ff3300;
     color: #ffffff;
@@ -57,4 +57,87 @@ body {
     text-align: center;
     display: none;
     margin-top: 20px;
+}
+
+/* emergency.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Emergency section styles */
+.emergency-section {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.5;
+    color: #666;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #ff453a;
+}
+
+/* Instructions section styles */
+.instructions-section {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Location info styles */
+#location-info {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff6f61;
+}
+
+#location-info span {
+    color: #333;
 }

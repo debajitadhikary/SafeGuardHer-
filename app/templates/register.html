@@ -1,56 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>user Registration</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
-
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/emergency">Send Emergency Signal</a></li>
-                <!-- Add more navigation links as needed -->
-              
-            <!-- If the user is not logged in, show the "Login" and "Register" links -->
-            <li><a href="/login">Login</a></li>
-     
-            </ul>
-        </nav>
-        <h1>Welcome to SafeguardHer</h1>
-        <p>Your safety matters to us</p>
-    </header>
-    <form method="POST">
-        {{ form.hidden_tag() }}  {# Include CSRF token #}
-        <div class="form-group">
-            {{ form.username.label(class="form-control-label") }}
-            {{ form.username(class="form-control form-control-lg") }}
-        </div>
-        <div class="form-group">
-            {{ form.email.label(class="form-control-label") }}
-            {{ form.email(class="form-control form-control-lg") }}
-        </div>
-        <div class="form-group">
-            {{ form.password.label(class="form-control-label") }}
-            {{ form.password(class="form-control form-control-lg") }}
-        </div>
-        <div class="form-group">
-            {{ form.confirm_password.label(class="form-control-label") }}
-            {{ form.confirm_password(class="form-control form-control-lg") }}
-        </div>
-        <div class="form-group">
-            {{ form.submit(class="btn btn-primary") }}
-        </div>
-    </form>
-    <footer>
-        <p>&copy; {{ current_year }} SafeguardHer</p>
-    </footer>
-    
-    
-</body>
-</html>
-
-
+<form method="POST" action="/register">
+    {{ form.hidden_tag() }} {# Include CSRF token #}
+    <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class="form-control", placeholder="Username") }}
+    </div>
+    <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(class="form-control", placeholder="Email") }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
