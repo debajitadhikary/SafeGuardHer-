@@ -14,7 +14,8 @@ By combining technology, empowerment, and community support, the Women Safety SO
 <br>
 
 # <u> `Features` :star2: </u>
-Emergency SOS: Instantly send distress signals to predefined contacts, authorities, or friends in case of an emergency.
-Location Sharing: Optionally share your real-time location with trusted contacts during an SOS event.
-Customizable Contacts: Easily configure and update the list of emergency contacts.
-User-Friendly Interface: A simple and intuitive user interface designed for stress-free operation.
+
+**Emergency SOS:** Instantly send distress signals to predefined contacts, authorities, or friends in case of an emergency.<br>
+**Location Sharing:** Optionally share your real-time location with trusted contacts during an SOS event.
+**Customizable Contacts:** Easily configure and update the list of emergency contacts.
+**User-Friendly Interface:** A simple and intuitive user interface designed for stress-free operation.
