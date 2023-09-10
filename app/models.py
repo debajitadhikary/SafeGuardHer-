@@ -1,9 +1,3 @@
-# models.py
-from app import db
-
-# Define your models here
-
-from datetime import datetime
 from app import db, login_manager
 from flask_login import UserMixin
 
@@ -16,7 +10,6 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-    # Add more user fields as needed
-    
+
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"

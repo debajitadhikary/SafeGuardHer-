@@ -3,38 +3,72 @@ from app import app, db, bcrypt  # Uncomment these lines
 from app.forms import RegistrationForm, LoginForm
 from app.models import User
 from flask import jsonify
+from flask_login import login_user, logout_user, login_required, current_user
 
 # Home Page
 @app.route("/")
 def home():
     return render_template('home.html', title='Home')
 
-# User Registration
-@app.route("/register", methods=['GET', 'POST'])
+
+
+
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-        db.session.add(user)
+    form = RegistrationForm()  # Initialize the registration form
+
+    if form.validate_on_submit():  # Check if the form was submitted and is valid
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+        # Check if the username or email already exists
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash('Username already exists. Please choose a different one.', 'danger')
+            return redirect(url_for('register'))
+
+        existing_email = User.query.filter_by(email=email).first()
+        if existing_email:
+            flash('Email address already registered. Please use a different email.', 'danger')
+            return redirect(url_for('register'))
+
+        # Create a new user
+        new_user = User(username=username, email=email, password=hashed_password)
+        db.session.add(new_user)
         db.session.commit()
+
         flash('Your account has been created! You can now log in.', 'success')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
 
-# User Login
-@app.route("/login", methods=['GET', 'POST'])
+    return render_template('register.html', form=form)  # Pass the form to the template
+
+
+
+
+
+@app.route('/rights')
+def rights():
+    return render_template('rights.html')
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = LoginForm()  # Create a login form (you need to define this form)
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
-            # Log in the user using Flask-Login
-            flash('Login successful!', 'success')
-            return redirect(url_for('home'))
+            login_user(user)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('home'))
         else:
-            flash('Login unsuccessful. Please check your email and password.', 'danger')
+            flash('Login unsuccessful. Please check email and password.', 'danger')
     return render_template('login.html', title='Login', form=form)
+
 
 # Sending an Emergency Signal
 @app.route("/emergency", methods=['GET', 'POST'])
